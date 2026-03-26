@@ -20,22 +20,40 @@ wifiPasswords = [
     
     "abc",
     "abc123",
+    
     "admin",
     "admin123",
+    
     "administrator",
     "administrator123",
+    
     "anonymous",
+    
     "att",
     "attwifi",
     
     "baseball",
+    
+    "basketball",
+    
     "bonvoy",
     "bonvoywifi",
     
     "changeme",
+    "changeme123",
+    "changeme123!",
+    "Changeme",
+    "Changeme123",
+    "Changeme123!",
+    
+    "comcast",
+    
     "computer",
     
     "default",
+    "defaultpass",
+    "defaultpassword",
+    
     "dragon",
     
     "fall",
@@ -44,25 +62,33 @@ wifiPasswords = [
     "Fall2024!",
     "Fall2025",
     "Fall2025!",
+    "Fall2026",
+    "Fall2026!",
+    
     "football",
     
     "guest",
     "guestwifi",
     
     "hilton",
+    
     "hotel",
     "hotelwifi",
+    
     "hyatt",
     "hyattwifi",
     
     "iloveyou",
+    
     "internet",
+    
     "itsonthefridge",
     
     "letmein",
     "letmeinplease",
     
     "marriott",
+    
     "monkey",
     
     "onthefridge",
@@ -81,19 +107,29 @@ wifiPasswords = [
     "qwerty123",
     
     "secret",
+    
+    "spectrum",
+    
     "spring",
     "spring123",
     "Spring2024",
     "Spring2024!",
     "Spring2025",
     "Spring2025!",
+    "Spring2026",
+    "Spring2026!",
+    
     "summer",
     "summer123",
     "Summer2024",
     "Summer2024!",
     "Summer2025",
     "Summer2025!",
+    "Summer2026",
+    "Summer2026!",
+    
     "sunshine",
+    
     "superman",
     
     "universal",
@@ -102,15 +138,30 @@ wifiPasswords = [
     "visitorwifi",
     
     "wedonthavewifi",
+    
     "welcome",
     "welcome123",
     "welcome2",
+    
     "wep",
     "whatever",
+    
     "wifi",
     "wifi123",
     "wifi1234",
     "wifipassword",
+    
+    "winter",
+    "Winter2024",
+    "Winter2024!",
+    "Winter2025",
+    "Winter2025!",
+    "Winter2026",
+    "Winter2026!",
+    
     "wireless",
+    
     "wpa",
+    
+    "xfinity",
 ]
