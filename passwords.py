@@ -1,3 +1,4 @@
+# Possible WiFi passwords. Customize and shorten this list if desired to make cracking faster/more targeted.
 wifiPasswords = [
 
     "111",
@@ -70,6 +71,9 @@ wifiPasswords = [
     "guest",
     "guestwifi",
     
+    "hello",
+    "hello123",
+    
     "hilton",
     
     "hotel",
@@ -89,6 +93,8 @@ wifiPasswords = [
     
     "marriott",
     
+    "mcdonalds",
+    
     "monkey",
     
     "onthefridge",
@@ -100,7 +106,10 @@ wifiPasswords = [
     "password1",
     "Password123",
     "password123",
+    
     "princess",
+    
+    "puravida",
     
     "qwerty",
     "qwerty1",
@@ -118,6 +127,8 @@ wifiPasswords = [
     "Spring2025!",
     "Spring2026",
     "Spring2026!",
+    
+    "starbucks",
     
     "summer",
     "summer123",
@@ -143,12 +154,15 @@ wifiPasswords = [
     "welcome123",
     "welcome2",
     
+    "wendys",
+    
     "wep",
     "whatever",
     
     "wifi",
     "wifi123",
     "wifi1234",
+    "wifipass",
     "wifipassword",
     
     "winter",
